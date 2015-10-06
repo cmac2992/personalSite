@@ -1,0 +1,7 @@
+extends ../layouts/default
+
+block content
+	if data.posts.results && data.posts.results.length > 0
+		//- do things with posts here
+	else
+		h3.text-muted No posts here

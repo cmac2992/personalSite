@@ -1,0 +1,18 @@
+extends ../layouts/default
+
+block css
+	//- Slick Slider CSS - Docs: https://github.com/kenwheeler/slick/
+	link(rel='stylesheet', type='text/css', href='//cdn.jsdelivr.net/jquery.slick/1.5.6/slick.css')
+	//- Add the slick-theme.css if you want default styling
+	link(rel='stylesheet', type='text/css', href='//cdn.jsdelivr.net/jquery.slick/1.5.6/slick-theme.css')
+
+block js
+	//- Slick Slider JS - Docs: https://github.com/kenwheeler/slick/
+	script(src='//cdn.jsdelivr.net/jquery.slick/1.5.6/slick.min.js')
+	script(src='/js/slideshow.js')
+
+block content
+	if !data.post
+		h2 Invalid Post.
+	else
+		//- Do things with post here

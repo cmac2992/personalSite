@@ -1,0 +1,9 @@
+//- Inlcude widget mixins
+//- include ./widgets/someWidgetKey
+
+mixin widgets(widgetList)
+  each widgetKey in widgetList
+    - var data = widgets.data(widgetKey);
+    //- case widgetKey
+      //- when 'someWidgetKey'
+      //-   +someWidgetKey(data)

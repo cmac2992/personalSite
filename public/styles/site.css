@@ -6059,6 +6059,11 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url("//public/fonts/public/fonts/bootstrap/glyphicons-halfings-regular.eot");
+  src: url("//public/fonts/public/fonts/bootstrap/glyphicons-halfings-regular.woff"); }
+
 body {
   font-family: 'Noto Serif' serif; }
 
@@ -6090,4 +6095,5 @@ h1, h2, h3, h4, h5, h6 {
 .profileImage {
   height: 150px;
   width: 150px;
-  border-radius: 50%; }
+  border-radius: 50%;
+  margin-top: 5%; }

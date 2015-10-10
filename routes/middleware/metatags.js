@@ -1,6 +1,9 @@
 /**
  * Creates all of the meta tags for the head
  */
+
+var keystone = require('keystone');
+
 exports = module.exports = function (req, res, next) {
   var locals = res.locals;
   var meta = locals.meta = {};

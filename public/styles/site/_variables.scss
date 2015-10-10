@@ -1,11 +1,12 @@
 // Override Bootstrap variables in this file, e.g.
 
+
 $font-size-base: 14px;
 
 @font-face {
     font-family: 'Glyphicons Halflings';
-    src: url('//public/fonts/public/fonts/bootstrap/glyphicons-halfings-regular.eot');
-    src: url('//public/fonts/public/fonts/bootstrap/glyphicons-halfings-regular.woff');
+    src: url('/fonts/bootstrap/glyphicons-halflings-regular.eot');
+    src: url('/fonts/bootstrap/glyphicons-halflings-regular.woff');
 }
 body{
 	font-family: 'Noto Serif' serif;

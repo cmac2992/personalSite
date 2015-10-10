@@ -16,15 +16,15 @@ block content
 									h6(class=(isLeftColumn  ? 'storyThumbnail__date' : 'storyThumbnail__date--alignRight'))
 										div(class=(isLeftColumn  ? 'timeline__circle--alignLeft' : 'timeline__circle--alignRight'))
 										| #{post._.publishedDate.format('MMMM Do, YYYY')}
-								.storyThumbnail__wrapper
+								
+								a(href=post.url).storyThumbnail__wrapper
 									.media
 										.media-left
 											if post.featuredImage
-												a(href="")
-													img.media-object(src=post.featuredImage._.image.fill(150,150))
+												img.media-object(src=post.featuredImage._.image.fill(150,150))
 										.media-body
 											h3.media-heading= post.title
-											p!= post.content
+											p= post.subHeadline
 				
 				else
 					.col-md-8.off.col-md-offset-2.col-xs-12

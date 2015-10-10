@@ -2,6 +2,8 @@
 // =========
 
 // Bootstrap can be removed entirely by deleting this line.
+//** Point at which the navbar becomes uncollapsed.
+
 
 @import "bootstrap/bootstrap";
 
@@ -13,6 +15,8 @@
 // use in your site stylesheets.
 
 @import "site/variables";
+
+
 
 
 // Site Styles
@@ -43,7 +47,13 @@
 		border-radius: $border-radius-base;
 		border: 1px solid $gray-lighter;
 		padding: 15px;
+		color: $text-color;
 		margin-bottom: -45px;
+		&:hover{
+			text-decoration: none;
+			color: $gray-base;
+		}
+		display: inline-block;
 		@media (max-width: $screen-md-min) { 
 			margin-bottom: 0px;
 		}

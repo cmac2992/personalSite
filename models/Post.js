@@ -29,7 +29,7 @@ Post.add({
         type: Types.Text
     },
     subHeadline: {
-        type: Types.Text
+        type: Types.Textarea, height: 100
     },
     state: {
         type: Types.Select,

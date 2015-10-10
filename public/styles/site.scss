@@ -37,3 +37,22 @@
 	border-radius: 50%;
 	margin-top: 5%;
 }
+.storyThumbnail{
+	&__wrapper{
+		border-radius: $border-radius-base;
+		border: 1px solid $gray-lighter;
+		padding: 15px;
+		margin-bottom: 30px;
+
+	}
+	&__date{
+		color: $gray-light;
+		&--alignRight{
+			text-align: right;
+		}
+	}
+}
+.timeline{
+	border-right: 1px solid $gray-lighter;
+}
+

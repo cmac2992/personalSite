@@ -1,10 +1,23 @@
 extends ../layouts/default
 
 block content
-	if data.posts.results && data.posts.results.length > 0
-		//- do things with posts here
-		-console.log(data)
-		each post, index in data.posts.results
-			p hello world
-	else
-		h3.text-muted No posts here
+	.container
+		.row
+				if data.posts.results && data.posts.results.length > 0
+					//- do things with posts here
+					each post, index in data.posts.results
+						- console.log(index & 2)
+						.col-xs-6.timeline
+							h6(class=(index % 2  ? 'storyThumbnail__date' : 'storyThumbnail__date--alignRight'))=post.publishedDate
+							.storyThumbnail__wrapper
+								.media
+									.media-left
+										if post.featuredImage
+											a(href="")
+												img.media-object(src=post.featuredImage._.image.fill(150,150))
+									.media-body
+										h3.media-heading= post.title
+										p!= post.content
+			
+				else
+					h3.text-muted No posts here

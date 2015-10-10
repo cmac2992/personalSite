@@ -12,23 +12,11 @@ html
 		//- Customise the stylesheet for your site by editing / public/styles/site.scss
 		link(href="/styles/site.css", rel="stylesheet")
 
-		//- favicon hack
-		link(href="//public/fonts/bootstrap/glyphicons-halfings-regular.eot", rel='stylesheet', type='text/css')
-		link(href="//public/fonts/bootstrap/glyphicons-halfings-regular.ttf", rel='stylesheet', type='text/css')
-
-
-
+	
 		//- This file provides the default styling for the KeystoneJS Content Editor
 		if user && user.canAccessKeystone
 			link(href="/keystone/styles/content/editor.min.css", rel="stylesheet")
 
-
-		//- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
-		//- Safely remove this block if you are not targeting IE8
-		//-[if lt IE 9]
-			script(src="//cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.js")
-			script(src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js")
-		//-[endif]
 
 		//- fonts includes
 		link(href='https://fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700,700italic|Quicksand:400,700,300', rel='stylesheet', type='text/css')
@@ -85,6 +73,13 @@ html
 		//- them specifically here, instead of bootstrap-3.3.5.min.js
 		script(src='/js/bootstrap/bootstrap-3.3.5.min.js')
 
+
+		//- Tracking scripts
+		script(src='/js/includes.js')
+
+
+	
+
 		//- The KeystoneJS Content Editor provides support for ks-editable data attributes,
 		//- which generate links to edit content for users who can access Keystone
 		if user && user.canAccessKeystone
@@ -98,6 +93,3 @@ html
 
 		//- Include template-specific javascript files by extending the js block
 		block js
-
-		//- Tracking scripts
-		script(src='/js/includes.js')

@@ -2,22 +2,31 @@ extends ../layouts/default
 
 block content
 	.container
-		.row
+
 				if data.posts.results && data.posts.results.length > 0
 					//- do things with posts here
 					each post, index in data.posts.results
-						- console.log(index & 2)
-						.col-xs-6.timeline
-							h6(class=(index % 2  ? 'storyThumbnail__date' : 'storyThumbnail__date--alignRight'))=post.publishedDate
-							.storyThumbnail__wrapper
-								.media
-									.media-left
-										if post.featuredImage
-											a(href="")
-												img.media-object(src=post.featuredImage._.image.fill(150,150))
-									.media-body
-										h3.media-heading= post.title
-										p!= post.content
-			
+						-var isLeftColumn = index % 2;
+						.row
+							if (isLeftColumn === 1)
+								.col-md-6
+
+							.col-md-6(class=(isLeftColumn  ? 'timeline__leftLine' : 'timeline__rightLine'))
+								if post.publishedDate
+									h6(class=(isLeftColumn  ? 'storyThumbnail__date' : 'storyThumbnail__date--alignRight'))
+										div(class=(isLeftColumn  ? 'timeline__circle--alignLeft' : 'timeline__circle--alignRight'))
+										| #{post._.publishedDate.format('MMMM Do, YYYY')}
+								.storyThumbnail__wrapper
+									.media
+										.media-left
+											if post.featuredImage
+												a(href="")
+													img.media-object(src=post.featuredImage._.image.fill(150,150))
+										.media-body
+											h3.media-heading= post.title
+											p!= post.content
+				
 				else
-					h3.text-muted No posts here
+					.col-md-8.off.col-md-offset-2.col-xs-12
+						h1.text-muted.text-center :(
+						h3.text-muted.text-center I've had many cool #{section}, unfortuently I just haven't written about them yet.

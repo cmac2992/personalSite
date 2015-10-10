@@ -26,6 +26,7 @@
 	border: none;
 	font-family: 'Quicksand' sans-serif;
 	border-radius: 0;
+	margin-bottom: 40px;
     
     &__links{
     	border-bottom: 1px solid #eeeeee;
@@ -42,17 +43,64 @@
 		border-radius: $border-radius-base;
 		border: 1px solid $gray-lighter;
 		padding: 15px;
-		margin-bottom: 30px;
+		margin-bottom: -45px;
+		@media (max-width: $screen-md-min) { 
+			margin-bottom: 0px;
+		}
 
 	}
 	&__date{
 		color: $gray-light;
+		position: relative;
+		margin-top: 0px;
 		&--alignRight{
+			@extend .storyThumbnail__date;
 			text-align: right;
+			@media (max-width: $screen-md-min) { 
+				text-align: left;	
+			}
 		}
 	}
 }
 .timeline{
-	border-right: 1px solid $gray-lighter;
+	&__leftLine{
+		border-left: 1px solid $gray-lighter;
+		margin-left: -1px;
+		@media (max-width: $screen-md-min) {
+			margin-left: 15px;
+			padding-bottom: 25px;
+		}
+	}
+	&__rightLine{
+		border-right: 1px solid $gray-lighter;
+		@media (max-width: $screen-md-min) { 
+			border-right: none;
+			margin-left: 15px;
+			border-left: 1px solid $gray-lighter;
+			padding-bottom: 25px;
+		}
+	}
+	&__circle{
+		height: 15px;
+		width: 15px;
+		border-radius: 50%;
+		border: 3px solid #fff;
+		background-color: $gray-lighter;
+		position: absolute;
+		top: -2px;
+
+		&--alignRight{
+			@extend .timeline__circle;
+			right: -23px;
+			@media (max-width: $screen-md-min) {
+				left: -23px;
+			}
+		}
+		&--alignLeft{
+			@extend .timeline__circle;
+			left: -23px;
+		}
+		
+	}
 }
 
